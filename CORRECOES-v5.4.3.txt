@@ -1,0 +1,14 @@
+PHYSICAL CLOUD DESKTOP — ATUALIZAÇÃO 5.4.3
+
+- Removida a proteção do ID automático por senha, incluindo proteger, bloquear, desbloquear e "Esqueci a senha".
+- IDs que estavam cifrados por senha em versões anteriores são descartados na primeira inicialização; o hash antigo fica pendente de revogação até o servidor estar autenticado.
+- O modo automático agora explica que o dispositivo de destino pode receber arquivos à distância, sem estar fisicamente próximo.
+- Ao tentar desativar o modo durante uma transferência ou fila de arquivos ativa, é apresentado um aviso específico. Confirmar cancela as operações em andamento antes de desativar; cancelar mantém tudo ativo.
+- O módulo de transferências expõe a consulta do estado ativo e o cancelamento global usado pelo modal.
+
+A atualização do Android incluída neste pacote está sincronizada com a versão 5.4.5 do projeto Android independente.
+
+AJUSTE DE INTERFACE — REMOÇÃO DA CENTRAL DE INSTALADORES
+- Removido do app desktop o atalho “Downloads dos aplicativos” e a aba/painel de instaladores.
+- Mantidas as funções de receber e salvar arquivos transferidos entre dispositivos; elas não são downloads de instaladores.
+- A geração do instalador/setup fica para a próxima etapa, fora desta alteração.

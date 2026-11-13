@@ -1,0 +1,17 @@
+Physical Cloud — Correções v5.4 (IDs automáticos)
+
+1) Campo do ID no Desktop
+- O campo agora aceita colar tanto os 27 caracteres quanto o ID completo com prefixo PC-.
+- Corrigido maxlength: antes era 27, então colar PC- + 27 caracteres podia ser truncado para 27 antes da normalização, perdendo caracteres do ID.
+- A interface mantém apenas os 27 caracteres no campo; o prefixo PC- é exibido separadamente.
+
+2) Bloqueio de conexão com o próprio dispositivo
+- Web e Desktop comparam o ID informado com o próprio ID automático local enquanto o modo automático está ativo e exibem: “Você não pode conectar ao próprio dispositivo.”
+- O servidor também verifica o hash já registrado em memória antes de consultar o Supabase e recusa o próprio ID com a mesma mensagem.
+- O modo servidor continua ativo; conectar a outros IDs continua permitido.
+
+3) Resposta rápida / corrida de eventos no Desktop
+- Os listeners de sucesso/erro agora são registrados antes do envio da solicitação, evitando perder uma resposta rápida do servidor e ficar aguardando até o timeout.
+
+Formato aceito: PC- + exatamente 27 caracteres (ou somente os 27 caracteres no campo do Desktop).
+O hash SHA-256 continua sendo calculado localmente; o ID em texto puro não é enviado ao servidor.

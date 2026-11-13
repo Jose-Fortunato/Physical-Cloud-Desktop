@@ -1,0 +1,11 @@
+
+
+Correção v5.4.2 — inicialização limpa do modo automático
+- A configuração anterior de modo automático não é oferecida para reativação.
+- Na primeira abertura desta versão, o modo automático fica desligado.
+- O ID/hash antigo é removido do estado ativo local; seu hash é colocado em fila para revogação no servidor.
+- Se o dispositivo estiver offline, a fila permanece salva e a revogação é tentada depois que a conexão WebSocket estiver autenticada.
+- Um novo ID só é gerado e registrado quando o usuário ativa o modo automático manualmente.
+- A limpeza ocorre uma única vez por perfil local; atualizações futuras não apagam o novo ID.
+- Desktop impede duas instâncias simultâneas de competir pelo mesmo deviceId.
+- A limpeza preserva o deviceId do dispositivo; não altera tokens nem tabelas do Supabase.
